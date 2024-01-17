@@ -160,6 +160,9 @@ return [
          * Package Service Providers...
          */
 
+        // menambahkan fortify service provider
+        App\Providers\FortifyServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
