@@ -18,6 +18,6 @@ Route::get('/', function () {
 });
 
 // Route Auth Login
-Route::get('/login', function () {
-    return view('pages.auth.login');
-});
+// Route::get('/login', function () {
+//     return view('pages.auth.login');
+// });
