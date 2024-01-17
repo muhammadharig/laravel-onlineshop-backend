@@ -21,6 +21,8 @@ class UserSeeder extends Seeder
             'name' => 'Admin',
             'email' => 'hari@fic12.com',
             'password' => Hash::make('hari8061'),
+            'phone' => '081234567890',
+            'role' => 'ADMIN',
         ]);
 
     }
