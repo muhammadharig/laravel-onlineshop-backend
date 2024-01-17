@@ -22,16 +22,15 @@
                 </div>
             </div>
             <div class="section-body">
-                {{-- <div class="row">
+                <div class="row">
                     <div class="col-12">
                         @include('layouts.alert')
                     </div>
-                </div> --}}
+                </div>
                 <h2 class="section-title">Users</h2>
                 <p class="section-lead">
                     You can manage all Users, such as editing, deleting and more.
                 </p>
-
 
                 <div class="row mt-4">
                     <div class="col-12">
@@ -64,7 +63,6 @@
                                 <div class="table-responsive">
                                     <table class="table-striped table">
                                         <tr>
-
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Phone</th>
@@ -74,44 +72,37 @@
                                         </tr>
                                         @foreach ($users as $user)
                                             <tr>
-
                                                 <td>{{ $user->name }}
                                                 </td>
-                                                <td>
-                                                    {{ $user->email }}
+                                                <td>{{ $user->email }}
                                                 </td>
-                                                <td>
-                                                    {{ $user->phone }}
+                                                <td>{{ $user->phone }}
                                                 </td>
                                                 <td>
                                                     {{ $user->roles }}
                                                 </td>
-                                                <td>
-                                                    {{ $user->created_at }}
-                                                </td>
+                                                <td>{{ $user->created_at }}</td>
                                                 <td>
                                                     <div class="d-flex justify-content-center">
-                                                        <a href='{{ route('user.edit', $user->id) }}'
+                                                        <a href="{{ route('user.edit', $user->id) }}"
                                                             class="btn btn-sm btn-info btn-icon">
                                                             <i class="fas fa-edit"></i>
                                                             Edit
                                                         </a>
-
                                                         <form action="{{ route('user.destroy', $user->id) }}" method="POST"
                                                             class="ml-2">
                                                             <input type="hidden" name="_method" value="DELETE" />
                                                             <input type="hidden" name="_token"
                                                                 value="{{ csrf_token() }}" />
                                                             <button class="btn btn-sm btn-danger btn-icon confirm-delete">
-                                                                <i class="fas fa-times"></i> Delete
+                                                                <i class="fas fa-times"></i>
+                                                                Delete
                                                             </button>
                                                         </form>
                                                     </div>
                                                 </td>
                                             </tr>
                                         @endforeach
-
-
                                     </table>
                                 </div>
                                 <div class="float-right">

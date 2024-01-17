@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -26,13 +27,16 @@ class UserController extends Controller
     // create
     public function create()
     {
-        return view('pages.dashboard');
+        return view('pages.user.create');
     }
 
     // store
     public function store(Request $request)
     {
-        return view('pages.dashboard');
+        $data = $request->all();
+        $data['password'] = Hash::make($request->input('password'));
+        User::create($data);
+        return redirect()->route('user.index');
     }
 
     // show
