@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class UserController extends Controller
 {
     // index
     public function index()
     {
-        return view('pages.user.index');
+        // get users with pagination
+        $users = User::paginate(5);
+        return view('pages.user.index', compact('users'));
     }
 
     // create
