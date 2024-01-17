@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             'email' => 'hari@fic12.com',
             'password' => Hash::make('hari8061'),
             'phone' => '081234567890',
-            'role' => 'ADMIN',
+            'roles' => 'ADMIN',
         ]);
 
     }
