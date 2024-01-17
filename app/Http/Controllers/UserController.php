@@ -9,7 +9,7 @@ class UserController extends Controller
     // index
     public function index()
     {
-        return view('pages.dashboard');
+        return view('pages.user.index');
     }
 
     // create
