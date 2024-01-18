@@ -24,3 +24,9 @@ Route::post('/register', [App\Http\Controllers\Api\AuthController::class, 'regis
 Route::post('/login', [App\Http\Controllers\Api\AuthController::class, 'login']);
 // logout
 Route::post('/logout', [App\Http\Controllers\Api\AuthController::class, 'logout'])->middleware('auth:sanctum');
+
+// category
+Route::get('/categories', [App\Http\Controllers\Api\CategoryController::class, 'index']);
+
+// product
+Route::get('/products', [App\Http\Controllers\Api\ProductController::class, 'index']);
